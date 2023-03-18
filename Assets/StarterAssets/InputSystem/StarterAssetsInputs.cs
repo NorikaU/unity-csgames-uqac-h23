@@ -13,6 +13,8 @@ namespace StarterAssets
 		public bool jump;
 		public bool sprint;
 		public bool shoot; //if player wants to shoot
+		public bool reload;
+		public bool tab;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -40,6 +42,11 @@ namespace StarterAssets
 			JumpInput(value.isPressed);
 		}
 
+		public void OnTab(InputValue value)
+		{
+			TabInput(value.isPressed);
+		}
+
 		public void OnSprint(InputValue value)
 		{
 			SprintInput(value.isPressed);
@@ -65,6 +72,11 @@ namespace StarterAssets
 		public void JumpInput(bool newJumpState)
 		{
 			jump = newJumpState;
+		}
+
+		public void TabInput(bool newTabState)
+		{
+			tab = newTabState;
 		}
 
 		public void SprintInput(bool newSprintState)
